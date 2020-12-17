@@ -1,0 +1,12 @@
+body {
+    background-color: #22212c; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none; 
+    color: #ffc700;
+}

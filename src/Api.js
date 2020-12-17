@@ -47,6 +47,10 @@ export const newGamesURL = () => {
     return `${api_url}${newGames}`
 }
 
+export const getDetailsURL = (game_id) => {
+    return `${api_url}games/${game_id}`
+}
+
 
 
 

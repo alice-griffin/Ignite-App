@@ -19,14 +19,4 @@ const gamesReducer = (state = initState, action) => {
     }
 }
 
-const fetchGames = (userData) => {
-    return {
-        type: "FETCH_GAMES",
-        payload: userData,
-    };
-};
-
-fetchGames({ user: "name" })
-
-
 export default gamesReducer;
