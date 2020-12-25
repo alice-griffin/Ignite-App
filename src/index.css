@@ -10,3 +10,5 @@ a {
     text-decoration: none; 
     color: #ffc700;
 }
+
+@import './styles/nav.css';

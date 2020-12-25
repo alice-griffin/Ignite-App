@@ -4,6 +4,9 @@ import {loadGames} from '../actions/gamesAction';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import Game from '../components/Game';
+import GameDetails from '../pages/GameDetails';
+import Nav from '../components/Nav';
+import NewGames from '../components/NewGames'
 
 const Home = () => {
 
@@ -17,28 +20,13 @@ const Home = () => {
 
     return(
         <div>
-            <GameList>
-                <h2>Popular Games</h2>
+            <Nav popular={popular} newGames={newGames} upcoming={upcoming} />
                 <Games>
-                    {popular.map((game) => (
-                        <Game name={game.name} released={game.released} id={game.id} image={game.background_image} key={game.id} />
-                    ))}
+                    <NewGames />
                 </Games>
-            </GameList>
         </div>
     );
 }
-
-const GameList = styled(motion.div)`
-    padding: 0rem 5rem;
-    h2 {
-        padding: 3rem 0rem; 
-        color: #ffc700;
-        font-family: 'Fredoka One', cursive;
-        font-size: 36px; 
-        letter-spacing: 2px; 
-    }     
-`;
 
 const Games = styled(motion.div)`
     display: grid; 

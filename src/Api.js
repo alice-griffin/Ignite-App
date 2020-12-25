@@ -51,6 +51,9 @@ export const getDetailsURL = (game_id) => {
     return `${api_url}games/${game_id}`
 }
 
+export const screenshotsURL = (game_id) => {
+    return `${api_url}games/${game_id}/screenshots`
+}
 
 
 
