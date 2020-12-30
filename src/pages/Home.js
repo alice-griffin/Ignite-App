@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {loadGames} from '../actions/gamesAction';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
-import Game from '../components/Game';
-import GameDetails from '../pages/GameDetails';
 import Nav from '../components/Nav';
-import NewGames from '../components/NewGames'
+import NewGames from '../components/NewGames';
+import PopularGames from '../components/PopularGames';
+import UpcomingGames from '../components/UpcomingGames';
 
 const Home = () => {
 
@@ -18,11 +18,27 @@ const Home = () => {
 
     const {popular, newGames, upcoming} = useSelector(state => state.games);
 
+    const [popularActive, setPopularActive] = useState(true);
+    const [upcomingActive, setUpcomingActive] = useState(false);
+    const [newActive, setNewActive] = useState(false);
+
+    console.log(newActive);
+
+    const renderComponent = () => {
+        if (popularActive) {
+            return <PopularGames />
+        } else if (upcomingActive) {
+            return <UpcomingGames />
+        } else if (newActive) {
+            return <NewGames />
+        }
+    }
+
     return(
         <div>
-            <Nav popular={popular} newGames={newGames} upcoming={upcoming} />
+            <Nav setNewActive={setNewActive} setUpcomingActive={setUpcomingActive} setPopularActive={setPopularActive} popularActive={popularActive} newActive={newActive} upcomingActive={upcomingActive} />
                 <Games>
-                    <NewGames />
+                    {renderComponent()}
                 </Games>
         </div>
     );

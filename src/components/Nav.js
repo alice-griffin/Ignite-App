@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Nav = ({popular, upcoming, newGames}) => {
-
+const Nav = ({setNewActive, setUpcomingActive, setPopularActive}) => {
 
     return (
         <div className="Nav">
             <nav>
                 <ul>
-                    <li>
+                    <button onClick={() => setNewActive(false) && setUpcomingActive(false) && setPopularActive(true)}>
                         Popular Games
-                    </li>
-                    <li>
+                    </button>
+                    <button onClick={() => setUpcomingActive(true) && setNewActive(false) && setPopularActive(false)}>
                         Upcoming Games
-                    </li>
-                    <li>
+                    </button>
+                    <button onClick={() => setNewActive(true) && setUpcomingActive(false) && setPopularActive(false)}>
                         New Games
-                    </li>
+                    </button>
                 </ul>
             </nav>
         </div>

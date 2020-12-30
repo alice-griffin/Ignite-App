@@ -5,14 +5,14 @@ import Game from '../components/Game';
 import {motion} from 'framer-motion';
 
 
-const UpcomingGames = () => {
+const PopularGames = () => {
 
-    const {upcoming} = useSelector(state => state.games);
+    const {popular} = useSelector(state => state.games);
 
     return (
-        <div className="UpcomingGames">
+        <div className="PopularGames">
             <Games>
-            {upcoming.map((game) => (
+            {popular.map((game) => (
             <Game name={game.name} released={game.released} id={game.id} image={game.background_image} key={game.id} />
             ))}
             </Games>
@@ -27,4 +27,4 @@ const Games = styled(motion.div)`
     grid-column-gap: 3rem; 
     grid-row-gap: 3rem; 
 `;
-export default UpcomingGames;
+export default PopularGames;
