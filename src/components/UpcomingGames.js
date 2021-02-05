@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux';
 import styled from 'styled-components';
 import Game from '../components/Game';
 import {motion} from 'framer-motion';
+import Nav from './Nav';
 
 
 const UpcomingGames = () => {
@@ -11,6 +12,7 @@ const UpcomingGames = () => {
 
     return (
         <div className="UpcomingGames">
+            <Nav />
             <Games>
             {upcoming.map((game) => (
             <Game name={game.name} released={game.released} id={game.id} image={game.background_image} key={game.id} />

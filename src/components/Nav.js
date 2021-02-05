@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import NewGames from './NewGames';
+import UpcomingGames from './UpcomingGames';
+
 
 const Nav = ({setNewActive, setUpcomingActive, setPopularActive}) => {
 
@@ -7,15 +10,9 @@ const Nav = ({setNewActive, setUpcomingActive, setPopularActive}) => {
         <div className="Nav">
             <nav>
                 <ul>
-                    <button onClick={() => setNewActive(false) && setUpcomingActive(false) && setPopularActive(true)}>
-                        Popular Games
-                    </button>
-                    <button onClick={() => setUpcomingActive(true) && setNewActive(false) && setPopularActive(false)}>
-                        Upcoming Games
-                    </button>
-                    <button onClick={() => setNewActive(true) && setUpcomingActive(false) && setPopularActive(false)}>
-                        New Games
-                    </button>
+                    <Link onClick={()=>setPopularActive(true)} to="/">Popular Games</Link>
+                    <Link onClick={()=>setUpcomingActive(true)} to="/upcoming-games">Upcoming Games</Link>
+                    <Link onClick={()=>setNewActive(true)} to="/new-games">New Games</Link>
                 </ul>
             </nav>
         </div>

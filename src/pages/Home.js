@@ -22,23 +22,25 @@ const Home = () => {
     const [upcomingActive, setUpcomingActive] = useState(false);
     const [newActive, setNewActive] = useState(false);
 
-    console.log(newActive);
+    console.log(`upcoming ${newActive}`);
+    console.log(`popular ${popularActive}`);
+    console.log(`new ${newActive}`);
 
     const renderComponent = () => {
-        if (popularActive) {
+        if (popularActive && !newActive && !upcomingActive) {
             return <PopularGames />
-        } else if (upcomingActive) {
+        } else if (upcomingActive && !popularActive && !newActive) {
             return <UpcomingGames />
-        } else if (newActive) {
+        } else if (newActive && !popularActive && !upcomingActive) {
             return <NewGames />
         }
     }
 
     return(
         <div>
-            <Nav setNewActive={setNewActive} setUpcomingActive={setUpcomingActive} setPopularActive={setPopularActive} popularActive={popularActive} newActive={newActive} upcomingActive={upcomingActive} />
+            <Nav setNewActive={setNewActive} setUpcomingActive={setUpcomingActive} setPopularActive={setPopularActive} />
                 <Games>
-                    {renderComponent()}
+                   <PopularGames />
                 </Games>
         </div>
     );
