@@ -23,8 +23,10 @@ const PopularGames = () => {
 const Games = styled(motion.div)`
     display: grid; 
     min-height: 80vh;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-column-gap: 3rem; 
-    grid-row-gap: 3rem; 
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-column-gap: 2rem; 
+    grid-row-gap: 2rem; 
+    margin-right: 5%;
+    margin-left: 5%;
 `;
 export default PopularGames;

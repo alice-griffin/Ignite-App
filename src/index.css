@@ -11,4 +11,9 @@ a {
     color: #ffc700;
 }
 
+.NewGames {
+    justify-content: center;
+}
+
+
 @import './styles/nav.css';
