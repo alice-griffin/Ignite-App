@@ -18,4 +18,6 @@ export const loadGames = () => async (dispatch) => {
             newGames: newData.data.results
         }
     });
+    
+    console.log(popularData.data.results);
 }

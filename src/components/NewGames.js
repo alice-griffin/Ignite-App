@@ -28,8 +28,8 @@ const Games = styled(motion.div)`
     grid-column-gap: 2rem; 
     grid-row-gap: 2rem;
     justify-items: center;
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: 8%;
+    margin-left: 8%;
 `;
 
 export default NewGames;

@@ -28,7 +28,7 @@ const Games = styled(motion.div)`
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     grid-column-gap: 2rem; 
     grid-row-gap: 2rem; 
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: 8%;
+    margin-left: 8%;
 `;
 export default UpcomingGames;

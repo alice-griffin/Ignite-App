@@ -5,7 +5,7 @@ import {useDispatch} from 'react-redux';
 import {loadDetail} from '../actions/detailAction';
 import {Link} from 'react-router-dom';
 
-const Game = ({name, released, image, id}) => {
+const Game = ({name, released, image, id, rating}) => {
 
     const dispatch = useDispatch();
 
@@ -18,6 +18,7 @@ const Game = ({name, released, image, id}) => {
             <div className="game-header">
             <h3>{name}</h3>
             <p>Release Date: {released}</p>
+            <div className="rating"><p>Rating: {rating}</p></div>
             </div>
             <Link to={`/details/${id}`}><img src={image} alt={name} /></Link>
         </StyledGame>
@@ -27,14 +28,18 @@ const Game = ({name, released, image, id}) => {
 const StyledGame = styled(motion.div)`
     min-height: 30vh;
     box-shadow: 3px 3px 15px #121212;
-    background-color: #2a2c37;  
+    background-color: #303346;  
+    display: flex;
+    flex-direction: column;
     img {
         width: 100%;
-        height: 40vh;
-        object-fit: cover;  
+        height: 45vh;
+        object-fit: cover; 
+        transform: translateY(7px);
     }
     .game-header {
-        color: #cdcdcd; 
+        color: #cdcdcd;
+        padding: 15px;
     }
 `;
 
