@@ -9,11 +9,11 @@ const Nav = ({setNewActive, setUpcomingActive, setPopularActive}) => {
     return (
         <div className="Nav">
             <nav>
-            <h1>GameShop</h1>
                 <ul>
-                    <NavLink exact activeClassName="underline" to="/">Popular Games</NavLink>
-                    <NavLink exact activeClassName="underline" to="/upcoming-games">Upcoming Games</NavLink>
-                    <NavLink exact activeClassName="underline" to="/new-games">New Games</NavLink>
+                    <li><h1>GameShop</h1></li>
+                    <li><NavLink exact activeClassName="underline" to="/">Popular Games</NavLink></li>
+                    <li><NavLink exact activeClassName="underline" to="/upcoming-games">Upcoming Games</NavLink></li>
+                    <li><NavLink exact activeClassName="underline" to="/new-games">New Games</NavLink></li>
                 </ul>
             </nav>
         </div>

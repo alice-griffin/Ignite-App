@@ -17,3 +17,5 @@ a {
 
 
 @import './styles/nav.css';
+@import './styles/detailedstyles.css';
+@import "react-alice-carousel/lib/alice-carousel.css";
